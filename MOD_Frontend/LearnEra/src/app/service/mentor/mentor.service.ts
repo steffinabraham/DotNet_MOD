@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Mentor } from 'src/app/models/MentorModel/mentor';
+import { Mentor } from 'src/app/models/mentor/mentor';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class MentorService {
     public Update(item:Mentor){
       return this._client.put(this.path+'/Update',item);
     }
-    public Delete(id:Number){
+    public Delete(id:number){
       return this._client.delete(this.path+'/Delete/'+id);
     }
   }

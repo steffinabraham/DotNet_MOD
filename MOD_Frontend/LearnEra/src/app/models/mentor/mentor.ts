@@ -1,10 +1,10 @@
 export class Mentor {
-    public MentorId : number;
-    public Email : string;
-    public MobileNo : number;
-    public Experience : number;
-    public MentorSkills : string;
-    public TimeSlot : number;
-    public Availability : boolean;
-    public Active : boolean
+    public mentorId : number;
+    public email : string;
+    public mobileNo : number;
+    public experience : number;
+    public mentorSkills : string;
+    public timeSlot : number;
+    public availability : boolean;
+    public active : boolean
 }

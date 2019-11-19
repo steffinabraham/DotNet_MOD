@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-import { Mentor } from 'src/app/models/MentorModel/mentor';
+import { Mentor } from 'src/app/models/mentor/mentor';
 import { MentorService } from 'src/app/service/mentor/mentor.service';
 
 @Component({

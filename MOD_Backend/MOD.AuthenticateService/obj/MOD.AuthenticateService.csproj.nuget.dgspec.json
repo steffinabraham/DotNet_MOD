@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Documents\\GitHub\\.Net_MOD\\MOD_Backend\\MOD.AuthenticateService\\MOD.AuthenticateService.csproj": {}
+    "C:\\Users\\Dell\\Documents\\GitHub\\DotNet_MOD\\MOD_Backend\\MOD.AuthenticateService\\MOD.AuthenticateService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Documents\\GitHub\\.Net_MOD\\MOD_Backend\\MOD.AuthenticateService\\MOD.AuthenticateService.csproj": {
+    "C:\\Users\\Dell\\Documents\\GitHub\\DotNet_MOD\\MOD_Backend\\MOD.AuthenticateService\\MOD.AuthenticateService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Documents\\GitHub\\.Net_MOD\\MOD_Backend\\MOD.AuthenticateService\\MOD.AuthenticateService.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Documents\\GitHub\\DotNet_MOD\\MOD_Backend\\MOD.AuthenticateService\\MOD.AuthenticateService.csproj",
         "projectName": "MOD.AuthenticateService",
-        "projectPath": "C:\\Users\\Dell\\Documents\\GitHub\\.Net_MOD\\MOD_Backend\\MOD.AuthenticateService\\MOD.AuthenticateService.csproj",
+        "projectPath": "C:\\Users\\Dell\\Documents\\GitHub\\DotNet_MOD\\MOD_Backend\\MOD.AuthenticateService\\MOD.AuthenticateService.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Documents\\GitHub\\.Net_MOD\\MOD_Backend\\MOD.AuthenticateService\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Documents\\GitHub\\DotNet_MOD\\MOD_Backend\\MOD.AuthenticateService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",

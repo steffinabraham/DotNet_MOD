@@ -8,10 +8,12 @@ namespace MOD.TechnologyService.Repository
 {
     public interface ITechnologyRepository
     {
-        void AddSkill(Technology item);
-       
-        void UpdateSkill(Technology item);
- 
+        void AddTechnology(Technology item);
+        List<Technology> GetAll();
+        Technology GetById(long id);
+        void UpdateTechnology(Technology item);
+        void DeleteTechnology(long id);
+        void BlockTechnology(long id);
 
     }
 }

@@ -14,47 +14,61 @@ namespace MOD.TechnologyService.Controllers
     public class TechnologyController : ControllerBase
     {
         private readonly ITechnologyRepository _repository;
-
         public TechnologyController(ITechnologyRepository repository)
         {
             _repository = repository;
         }
-        // get: api/technology
-        //[httpget]
-        //public IActio<string> get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
 
-        //// GET: api/Technology/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
 
-        // POST: api/Technology
+        [HttpGet]
+        [Route("GetAll")]
+        public List<Technology> Get()
+        {
+            return _repository.GetAll();
+        }
+
+
+
+
+
+
+        [HttpGet("{id}", Name = "Get")]
+        [Route("GetById/{id}")]
+        public Technology Get(long id)
+        {
+            return _repository.GetById(id);
+        }
+
+
         [HttpPost]
         [Route("Add")]
-        public IActionResult Post(Technology item)
+        public IActionResult Post([FromBody] Technology item)
         {
-            _repository.AddSkill(item);
+            _repository.AddTechnology(item);
             return Ok("Record Added");
         }
 
-        // PUT: api/Technology/5
+
         [HttpPut("{id}")]
-        [Route("updateSkill/{id}")]
-        public IActionResult Put(int id, [FromBody] Technology item)
+        [Route("Update/{id}")]
+
+        public void Put(Technology item)
         {
-            _repository.UpdateSkill(item);
-            return Ok("Record Added");
+            _repository.UpdateTechnology(item);
         }
 
-        //// DELETE: api/ApiWithActions/5
+
         //[HttpDelete("{id}")]
-        //public void Delete(int id)
+        //[Route("Delete/{id}")]
+        //public void Delete(long id)
         //{
+        //    _repository.DeleteTechnology(id);
         //}
+        //public void Block(long id)
+        //{
+        //    _repository.BlockTechnology(id);
+        //}
+
+
     }
 }
