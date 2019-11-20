@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './shared/home/home.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { MentorService } from './service/mentor/mentor.service';
+import { LoginService } from './service/login/login.service';
+import { AdminService } from './service/admin/admin.service';
 
 
 
@@ -31,7 +33,7 @@ import { MentorService } from './service/mentor/mentor.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [MentorService],
+  providers: [MentorService, LoginService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

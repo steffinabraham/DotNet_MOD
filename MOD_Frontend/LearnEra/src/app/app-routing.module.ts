@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'mentor', component: MentorloginComponent},
   { path: 'mentorsignup', component: MentorsignupComponent},
   { path: 'adminlogin', component: AdminloginComponent},
-  { path: 'addcourse', component: AddcourseComponent}
+  { path: 'addcourse', component: AddcourseComponent},
+  { path: 'mentorlogin', component: MentorloginComponent}
  
   
 ];

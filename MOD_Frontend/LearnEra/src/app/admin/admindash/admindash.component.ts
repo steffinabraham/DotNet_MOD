@@ -47,11 +47,13 @@ export class AdmindashComponent implements OnInit {
   //   this._service.Search(this.item.mentorId).subscribe(k=>this.item=k);
   //   console.log(this.item);
   // }
-  public Update() {
-    this._service.Update(this.item).subscribe(k => k = this.msg);
+  public Update(id) {
+    // this.item.active=true;
+    this._service.Update(id).subscribe(k => k = this.msg);
   }
-  public Delete() {
-    this._service.Delete(this.item.mentorId).subscribe(k => k = this.msg);
+
+  public Delete(id:number) {
+    this._service.Delete(id).subscribe(k => k = this.msg);
   }
   usrFunction = function () {
     var u = document.getElementById("usr");

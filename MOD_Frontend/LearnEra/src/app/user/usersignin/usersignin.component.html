@@ -17,7 +17,7 @@
       <label for="uname"><b>Username</b></label>
       <!-- <input type="text" placeholder="Enter Username" name="uname" required> -->
 
-      <input type="email" [(ngModel)]="email_id" name="uname" #email_id_ref="ngModel" required placeholder="Enter Email Id">
+      <input type="email" [(ngModel)]="email" name="uname" #email_id_ref="ngModel" required placeholder="Enter Email Id">
       
 
 
@@ -25,7 +25,7 @@
       <label for="psw"><b>Password</b></label>
       <!-- <input type="password" placeholder="Enter Password" name="psw" required> -->
         
-      <input type="password" [(ngModel)]="pass_word" name="psw" #pass_word_ref="ngModel" required placeholder="Enter Password">
+      <input type="password" [(ngModel)]="pwd" name="psw" #pass_word_ref="ngModel" required placeholder="Enter Password">
       
       <span *ngIf="email_id_ref.invalid && email_id_ref.dirty">
         <span *ngIf="email_id_ref.errors.required" class="error">E-mail Should not be empty</span>

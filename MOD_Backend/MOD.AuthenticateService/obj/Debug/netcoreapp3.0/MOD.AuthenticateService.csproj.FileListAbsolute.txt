@@ -228,10 +228,10 @@ C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\bi
 C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\MOD.AuthenticateService.csprojAssemblyReference.cache
 C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\staticwebassets\MOD.AuthenticateService.StaticWebAssets.Manifest.cache
 C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\staticwebassets\MOD.AuthenticateService.StaticWebAssets.xml
-C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\MOD.AuthenticateService.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\MOD.AuthenticateService.AssemblyInfoInputs.cache
 C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\MOD.AuthenticateService.AssemblyInfo.cs
 C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\MOD.AuthenticateService.RazorTargetAssemblyInfo.cache
 C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\MOD.AuthenticateService.csproj.CopyComplete
 C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\MOD.AuthenticateService.dll
 C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\MOD.AuthenticateService.pdb
+C:\Users\Dell\Documents\GitHub\DotNet_MOD\MOD_Backend\MOD.AuthenticateService\obj\Debug\netcoreapp3.0\MOD.AuthenticateService.MvcApplicationPartsAssemblyInfo.cache

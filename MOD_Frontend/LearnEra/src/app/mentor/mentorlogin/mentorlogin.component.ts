@@ -2,56 +2,54 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router'; 
+import { Mentor } from 'src/app/models/mentor/mentor';
+import { User } from 'src/app/models/user/user';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-mentorlogin',
   templateUrl: './mentorlogin.component.html',
   styleUrls: ['./mentorlogin.component.css']
 })
-export class MentorloginComponent implements OnInit {
-  email_id;
-  pass_word;
-  error_message = ""
-
-  constructor(private http: HttpClient, private _router : Router) { }
-
-
+export class MentorloginComponent implements OnInit { [x: string]: any;
+  email;
+  pwd;
+  
+  
+ userList:User[]=[];
+  
+  constructor(private http:HttpClient,private router:Router,private _service:LoginService) { }
   ngOnInit() {
   }
-  submit_form_data(){
-    console.log("email_id : " + this.email_id);
-    console.log("pass_word : " + this.pass_word);
+  public Login()
+  {
+    this._service.Login(this.email,this.pwd).subscribe(data=>{
+      console.log(data)
 
-    var body = "email_id=" + this.email_id 
-        + "&pass_word=" + this.pass_word;
-	
-let headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
-
-this.http.post("http://localhost:3000/mentor/check", body, 
-                  {headers: headers, responseType:'text'}).subscribe(
-      (result) => {
-        console.log(result)
-        // localStorage.setItem('qualification', 'MCA');
-        // localStorage.setItem('amars_data', JSON.stringify({ name: 'R. Amaranathan', place: 'Valasai', mailid: 'amar@hotmail.com' }));
-        if(result == 'Invalid Mentor'){
-          this.error_message = "Invalid Mentor"
-        } 
-        else if(result=="Mentor blocked"){
-          alert("Mentor blocked")
-
-        }
-        else {// we will get the JWT token from REST API / Server then we have to store in the Frontend
-          localStorage.setItem('token', result);
-          this._router.navigate(['upage'])
-          //this.error_message = ""
-          //this.error_message = result
-
-        }
-      },
-      (error) => {
-        this.error_message = "Error occured, check whether Backend is running!";
-        console.log(error)
+      if(data.message=='User')
+      {
+        console.log("HAHAHAHHAHAHA");
+        localStorage.setItem('token',data.token);
+        this.router.navigate(['admindash'],{relativeTo:this._activatedRoute});
       }
-    )
+      else if(data.message=='Mentor')
+      {
+        localStorage.setItem('token',data.token);
+        this.router.navigate(['admindash'],{relativeTo:this._activatedRoute});
+      }
+      else if(data.message=='Admin')
+      {
+        console.log("HAHAHAHHAHAHA");
+        this.router.navigate(['admindash'],{relativeTo:this._activatedRoute});
+      }
+      else
+      {
+        console.log("Nothing found");
+      }
+
+    },
+    err=>{
+       console.log("subscribe err");
+    });
   }
 }

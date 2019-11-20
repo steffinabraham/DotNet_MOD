@@ -125,11 +125,39 @@
   <div class="pimgClouds" style="padding:0px 0px;">
     <div class="wowsearch">
       <!-- <p>Your Search End Here..</p> -->
-      <input type="text" placeholder="Seek & find">
+      <input type="text" placeholder="Enter Tech" [(ngModel)]="skill">
       <div class="search"></div>
-    </div>
+<br>
+<br>
+<br>
+      <button type="submit" class="wow" (click)="Search()" >Search</button></div>
+      <table>
+          <tbody *ngFor="let item of list">
+            <tr>
+              <td>
+                {{item.mentorId}}
+              </td>
+              <td>
+                  {{item.mentorName}}
+                </td>
+                <td>
+                    {{item.email}}
+                  </td>
+                  <td>
+                      {{item.mobileNo}}
+                    </td>
+            </tr>
+        
+          </tbody>
+        </table>
+    
   </div>
 </section>
+<div>
+<!-- <input type="text" placeholder="Enter technology" style="margin-left: 16px;" [(ngModel)]="skill"><br>
+        <button type="submit" class="search" (click)="Search()" >Search</button></div> -->
+
+
 
 <!-- ############################################----- SEARCH END ----############################################ -->
 

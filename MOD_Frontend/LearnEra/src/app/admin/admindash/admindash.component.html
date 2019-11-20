@@ -8,6 +8,7 @@
     </div>
   </div>
   
+  Welcome {{UserName}}
   
   <div class="offset">
   
@@ -82,17 +83,17 @@
             <td>{{item.experience}}</td>
             <td>{{item.mentorSkills}}</td>
             <td>
-              <button type="button" (click)="Delete(MentorId)" class="btn btn-dark button1">
+              <button type="button" (click)="Delete(item.mentorId)" class="btn btn-dark button1">
                 <i class="fa fa-remove" style="color:red"></i> Delete
               </button>
             </td>
             <td>
-              <button type="button" (click)="block_mentor(mentor._id)" class="btn btn-dark button1">
+              <button type="button" (click)="Update(item.mentorId)" class="btn btn-dark button1">
                 <i class="fa fa-ban" style="color:red"></i> Block
               </button>
             </td>
             <td>
-              <button type="button" (click)="unblock_mentor(mentor._id)" class="btn btn-dark button1">
+              <button type="button" (click)="Update(item.active)" class="btn btn-dark button1">
                 <i class="fa fa-ban" style="color:white"></i> Unblock
               </button>
             </td>

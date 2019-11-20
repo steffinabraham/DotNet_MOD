@@ -9,6 +9,8 @@ using MOD.AuthenticateService.Repository;
 
 namespace MOD.AuthenticateService.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class LoginController : ControllerBase
     {
         private readonly ILoginRepository _repository;
@@ -18,20 +20,22 @@ namespace MOD.AuthenticateService.Controllers
         }
 
         [HttpGet]
-        [Route("Validate/{id}/{pwd}")]
+        [Route("Validate/{email}/{pwd}")]
         public Token Get(string email, string pwd)
         {
-            if (_repository.UserLogin(email, pwd))
+            if (_repository.UserLogin(email, pwd) !=null)
             {
-                return new Token() { message = "User", token = GetToken() };
+                User response = _repository.UserLogin(email, pwd);
+                return new Token() { message = "User", token = response.UserName };
             }
-            else if (_repository.MentorLogin(email, pwd))
+            else if (_repository.MentorLogin(email, pwd) != null )
             {
-                return new Token() { message = "Mentor", token = GetToken() };
+                Mentor response = _repository.MentorLogin(email, pwd);
+                return new Token() { message = "Mentor", token = response.MentorName };
             }
-            else if (email == "TechMakerz28" && pwd == "admin")
+            else if (email == "123" && pwd == "admin")
             {
-                return new Token() { message = "Admin", token = "" };
+                return new Token() { message = "Admin", token = GetToken() };
             }
             else
             {

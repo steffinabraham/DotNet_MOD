@@ -6,18 +6,18 @@
 
 <div id="id01" class="modal">
   
-  <form (ngSubmit)="submit_form_data()" #form1="ngForm" class="modal-content animate" action="/action_page.php" method="post">
+  
     
-    <div class="imgcontainer">
+    <!-- <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
+    </div> -->
 
     <div class="container">
       <label for="uname"><b>Mentorname</b></label>
       <!-- <input type="text" placeholder="Enter Mentorname" name="uname" required> -->
 
-      <input type="email" [(ngModel)]="email_id" name="uname" #email_id_ref="ngModel" required placeholder="Enter Email Id">
+      <input type="email" [(ngModel)]="email" name="uname"  required placeholder="Enter Email Id">
       
 
 
@@ -25,18 +25,18 @@
       <label for="psw"><b>Password</b></label>
       <!-- <input type="password" placeholder="Enter Password" name="psw" required> -->
         
-      <input type="password" [(ngModel)]="pass_word" name="psw" #pass_word_ref="ngModel" required placeholder="Enter Password">
+      <input type="password" [(ngModel)]="pwd" name="pwd"  required placeholder="Enter Password">
       
-      <span *ngIf="email_id_ref.invalid && email_id_ref.dirty">
+      <!-- <span *ngIf="email_id_ref.invalid && email_id_ref.dirty">
         <span *ngIf="email_id_ref.errors.required" class="error">E-mail Should not be empty</span>
     </span>
       <br>
       
       <span *ngIf="pass_word_ref.invalid && pass_word_ref.dirty">
         <span *ngIf="pass_word_ref.errors.required" class="error">Password Should not be empty</span>
-      </span>
+      </span> -->
 
-      <button [disabled]="!form1.form.valid" class="btn btn-success" type="submit">Login</button>
+      <button  class="btn btn-success"  (click)="Login()">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -48,7 +48,7 @@
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
-  </form>
+ 
 </div>
 
 <script>
