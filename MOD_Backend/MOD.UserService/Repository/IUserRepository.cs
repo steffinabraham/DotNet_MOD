@@ -19,5 +19,10 @@ namespace MOD.UserService.Repository
 
         List<Mentor> SearchMentor(string Skill);
 
+        void BlockUser(long id);
+        void UnBlockUser(long id);
+
+
+
     }
 }

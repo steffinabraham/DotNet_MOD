@@ -12,10 +12,7 @@ namespace MOD.TrainingService.Context
 
         public TrainingContext(DbContextOptions<TrainingContext> options) : base(options) { }
         public DbSet<Training> Training { get; set; }
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(@"Server=DESKTOP-J33QLHE\SQLDB;Database=MOD_DB;Trusted_Connection=True;");
-        //}
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

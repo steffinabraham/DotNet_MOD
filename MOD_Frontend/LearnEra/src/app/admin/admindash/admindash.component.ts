@@ -55,6 +55,15 @@ export class AdmindashComponent implements OnInit {
   public Delete(id:number) {
     this._service.Delete(id).subscribe(k => k = this.msg);
   }
+  public Block(id:number) {
+    this._service.Block(id).subscribe(k => k = this.msg);
+    
+  }
+  public UnBlock(id:number) {
+    this._service.UnBlock(id).subscribe(k => k = this.msg);
+  }
+
+
   usrFunction = function () {
     var u = document.getElementById("usr");
     var m = document.getElementById("mntr");

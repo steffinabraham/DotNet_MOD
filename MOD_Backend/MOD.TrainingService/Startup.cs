@@ -29,8 +29,17 @@ namespace MOD.TrainingService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<TrainingContext>
-            (opts => opts.UseSqlServer(Configuration["ConnectionString:MOD_DB"]));
+ (opts => opts.UseSqlServer(Configuration["ConnectionString:MOD_DB"]));
             services.AddTransient<ITrainingRepository, TrainingRepository>();
+            services.AddCors(option =>
+            {
+                option.AddPolicy("AllowMyOrigin", builder =>
+                 builder.AllowAnyOrigin()
+                 .AllowAnyHeader()
+                 .AllowAnyMethod()
+            );
+
+            });
 
             services.AddControllers();
             
@@ -49,6 +58,7 @@ namespace MOD.TrainingService
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors("AllowMyOrigin");
 
             app.UseEndpoints(endpoints =>
             {

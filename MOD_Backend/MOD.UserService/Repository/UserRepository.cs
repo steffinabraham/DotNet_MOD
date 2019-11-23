@@ -66,7 +66,26 @@ namespace MOD.UserService.Repository
 
         public void BlockUser(long Id)
         {
+            var item = _context.User.Find(Id);
+            if (item.Active == true)
+            {
+                item.Active = (item.Active);
 
+            }
+            _context.Entry(item).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+        public void UnBlockUser(long Id)
+        {
+            var item = _context.User.Find(Id);
+            if (item.Active == false)
+            {
+                item.Active = (item.Active);
+
+            }
+            _context.Entry(item).State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }

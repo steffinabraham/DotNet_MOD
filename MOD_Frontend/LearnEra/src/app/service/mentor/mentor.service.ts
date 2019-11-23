@@ -26,5 +26,11 @@ export class MentorService {
     public Delete(id:number){
       return this._client.delete(this.path+'/Delete/'+id);
     }
+    public Block(id:number){
+      return this._client.put(this.path+'/BlockMentor/'+id,id);
+    }
+    public UnBlock(id:number){
+      return this._client.put(this.path+'/UnBlockMentor/'+id,id);
+    }
   }
   

@@ -31,6 +31,16 @@ namespace MOD.PaymentService
             services.AddDbContext<PaymentContext>
             (opts => opts.UseSqlServer(Configuration["ConnectionString:MOD_DB"]));
             services.AddTransient<IPaymentRepository, PaymentRepository>();
+    
+            services.AddCors(option =>
+            {
+                option.AddPolicy("AllowMyOrigin", builder =>
+                 builder.AllowAnyOrigin()
+                 .AllowAnyHeader()
+                 .AllowAnyMethod()
+            );
+
+            });
 
             services.AddControllers();
         }
@@ -48,6 +58,8 @@ namespace MOD.PaymentService
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("AllowMyOrigin");
 
             app.UseEndpoints(endpoints =>
             {

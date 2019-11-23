@@ -52,8 +52,8 @@ namespace MOD.UserService.Controllers
         }
 
 
-        [HttpPut("{id}")]
-        [Route("Update/{id}")]
+        [HttpPut]
+        [Route("Update")]
 
         public void Put(User item)
         {
@@ -67,16 +67,25 @@ namespace MOD.UserService.Controllers
         {
             _repository.DeleteUser(id);
         }
-        //public void Block(long id)
-        //{
-        //    _repository.BlockUser(id);
-        //}
 
+        [HttpPut("{id}")]
+        [Route("BlockUser/{id}")]
+        public void Block(long id)
+        {
+            _repository.BlockUser(id);
+        }
+
+        [HttpPut("{id}")]
+        [Route("UnBlockUser/{id}")]
+        public void UnBlock(long id)
+        {
+            _repository.UnBlockUser(id);
+        }
 
         //------------------SEARCH MENTOR
 
         [HttpGet]
-        [Route("GetMentorBySkill/{id}")]
+        [Route("GetMentor/{id}")]
         public List<Mentor> Get(String id)
         {
             return _repository.SearchMentor(id);

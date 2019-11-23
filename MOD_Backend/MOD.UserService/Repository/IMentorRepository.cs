@@ -15,7 +15,8 @@ namespace MOD.UserService.Repository
         void UpdateMentor(Mentor item);
         void DeleteMentor(long id);
         void BlockMentor(long id);
-        
+        void UnBlockMentor(long id);
+
 
     }
 }

@@ -17,10 +17,11 @@ namespace MOD.TechnologyService.Models
 
         [StringLength(20)]
         public string TOC { get; set; }
-       
 
-        public double Fee{ get; set; }
+
+        public double Fee { get; set; }
 
         public int Duration { get; set; }
+        public IEnumerable<Training> Trainings { get; set; }
     }
 }

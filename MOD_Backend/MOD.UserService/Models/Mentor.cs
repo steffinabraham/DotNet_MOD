@@ -29,5 +29,8 @@ namespace MOD.UserService.Models
         public bool Active { get; set; }
      
         public string Password { get; set; }
+
+        public IEnumerable<Training> Trainings { get; set; }
+        public IEnumerable<Payment> Payments { get; set; }
     }
 }

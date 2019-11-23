@@ -12,13 +12,13 @@ namespace MOD.TrainingService.Models
     {
         [Key]
         public long TrainingId { get; set; }
+        [ForeignKey("User")]
 
-
-        public long UserId{ get; set; }
-
+        public long UserId { get; set; }
+        [ForeignKey("Mentor")]
         public long MentorId { get; set; }
+        [ForeignKey("Technology")]
 
-    
         public long SkillId { get; set; }
 
         public DateTime StartDate { get; set; }
@@ -34,6 +34,13 @@ namespace MOD.TrainingService.Models
         public long Progress { get; set; }
 
         public int Rating { get; set; }
+
+        public User User { get; set; }
+        public Mentor Mentor{ get; set; }
+        public Technology Technology { get; set; }
+
+
+
 
     }
 }

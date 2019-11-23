@@ -51,6 +51,20 @@ namespace MOD.TrainingService.Controllers
             _repository.UpdateTraining(item);
             return Ok("Record Added");
         }
+        [HttpGet("{id}", Name = "Get")]
+        [Route("GetTrainingByUser/{id}")]
+        public List<Training> Get(long id)
+        {
+            return _repository.GetTrainingByUserId(id);
+        }
+
+        [HttpGet("{id}", Name = "Get")]
+        [Route("GetTrainingByMentor/{id}")]
+        public List<Training> GetbyMentor(int id)
+        {
+            return _repository.GetTrainingByMentorId(id);
+
+        }
 
         //// DELETE: api/ApiWithActions/5
         //[HttpDelete("{id}")]

@@ -30,15 +30,16 @@ export class MentorloginComponent implements OnInit { [x: string]: any;
       {
         console.log("HAHAHAHHAHAHA");
         localStorage.setItem('token',data.token);
-        this.router.navigate(['admindash'],{relativeTo:this._activatedRoute});
+        this.router.navigate(['userdash'],{relativeTo:this._activatedRoute});
       }
       else if(data.message=='Mentor')
       {
         localStorage.setItem('token',data.token);
-        this.router.navigate(['admindash'],{relativeTo:this._activatedRoute});
+        this.router.navigate(['mentordash'],{relativeTo:this._activatedRoute});
       }
       else if(data.message=='Admin')
       {
+        localStorage.setItem('token',data.token);
         console.log("HAHAHAHHAHAHA");
         this.router.navigate(['admindash'],{relativeTo:this._activatedRoute});
       }

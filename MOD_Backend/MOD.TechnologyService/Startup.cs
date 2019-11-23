@@ -28,10 +28,19 @@ namespace MOD.TechnologyService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddDbContext<TechnologyContext>
-           (opts => opts.UseSqlServer(Configuration["ConnectionString:MOD_DB"]));
+            (opts => opts.UseSqlServer(Configuration["ConnectionString:MOD_DB"]));
             services.AddTransient<ITechnologyRepository, TechnologyRepository>();
+      
+            services.AddCors(option =>
+            {
+                option.AddPolicy("AllowMyOrigin", builder =>
+                 builder.AllowAnyOrigin()
+                 .AllowAnyHeader()
+                 .AllowAnyMethod()
+            );
+
+            });
 
             services.AddControllers();
         }
@@ -49,6 +58,8 @@ namespace MOD.TechnologyService
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("AllowMyOrigin");
 
             app.UseEndpoints(endpoints =>
             {

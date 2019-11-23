@@ -7,22 +7,24 @@ using System.Threading.Tasks;
 
 namespace MOD.AuthenticateService.Models
 {
-        [Table("User")]
-        public class User
-        {
-            [Key]
-            public long UserId { get; set; }
+    [Table("User")]
+    public class User
+    {
+        [Key]
+        public long UserId { get; set; }
 
-            [StringLength(20)]
-            public string UserName { get; set; }
+        [StringLength(20)]
+        public string UserName { get; set; }
 
-            [StringLength(20)]
-            public string Email { get; set; }
+        [StringLength(20)]
+        public string Email { get; set; }
 
-            [StringLength(20)]
-            public string Password { get; set; }
+        [StringLength(20)]
+        public string Password { get; set; }
 
-            [StringLength(20)]
-            public bool Active { get; set; }
-        }
+        [StringLength(20)]
+        public bool Active { get; set; }
+        public IEnumerable<Training> Training { get; set; }
+        public IEnumerable<Payment> Payment { get; set; }
     }
+}

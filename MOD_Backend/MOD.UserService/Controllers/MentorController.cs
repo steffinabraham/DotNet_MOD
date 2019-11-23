@@ -50,7 +50,7 @@ namespace MOD.UserService.Controllers
 
 
         [HttpPut("{id}")]
-        [Route("Update/{id}")]
+        [Route("Update")]
 
         public void Put(Mentor item)
         {
@@ -64,11 +64,20 @@ namespace MOD.UserService.Controllers
         {
             _repository.DeleteMentor(id);
         }
+
+        [HttpPut("{id}")]
+        [Route("BlockMentor/{id}")]
         public void Block(long id)
         {
             _repository.BlockMentor(id);
         }
 
+        [HttpPut("{id}")]
+        [Route("UnBlockMentor/{id}")]
+        public void UnBlock(long id)
+        {
+            _repository.UnBlockMentor(id);
+        }
 
     }
 }

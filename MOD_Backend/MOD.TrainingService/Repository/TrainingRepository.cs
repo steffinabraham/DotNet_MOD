@@ -24,5 +24,15 @@ namespace MOD.TrainingService.Repository
             _context.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
         }
+        public List<Training> GetTrainingByUserId(long id)
+        {
+            return _context.Training.Where(i => i.UserId == id).ToList();
+
+        }
+        public List<Training> GetTrainingByMentorId(long id)
+        {
+            return _context.Training.Where(i => i.UserId == id).ToList();
+
+        }
     }
 }

@@ -61,9 +61,27 @@ namespace MOD.UserService.Repository
 
         public void BlockMentor(long Id)
         {
+            var item = _context.Mentor.Find(Id);
+            if (item.Active == true)
+            {
+                item.Active = !(item.Active);
 
+            }
+            _context.Entry(item).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
+        public void UnBlockMentor(long Id)
+        {
+            var item = _context.Mentor.Find(Id);
+            if (item.Active == false)
+            {
+                item.Active = !(item.Active);
+
+            }
+            _context.Entry(item).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
 
     }
 }

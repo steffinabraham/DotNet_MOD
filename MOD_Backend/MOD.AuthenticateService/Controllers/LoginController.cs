@@ -26,12 +26,12 @@ namespace MOD.AuthenticateService.Controllers
             if (_repository.UserLogin(email, pwd) !=null)
             {
                 User response = _repository.UserLogin(email, pwd);
-                return new Token() { message = "User", token = response.UserName };
+                return new Token() { message = "User", token = response.UserId.ToString() };
             }
             else if (_repository.MentorLogin(email, pwd) != null )
             {
                 Mentor response = _repository.MentorLogin(email, pwd);
-                return new Token() { message = "Mentor", token = response.MentorName };
+                return new Token() { message = "Mentor", token = response.MentorId.ToString() };
             }
             else if (email == "123" && pwd == "admin")
             {

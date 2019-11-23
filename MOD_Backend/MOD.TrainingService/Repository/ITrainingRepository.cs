@@ -12,6 +12,7 @@ namespace MOD.TrainingService.Repository
 
         void UpdateTraining(Training item);
 
-
+        List<Training> GetTrainingByUserId(long id);
+        List<Training> GetTrainingByMentorId(long id);
     }
 }
