@@ -52,9 +52,8 @@ namespace MOD.UserService.Controllers
         }
 
 
-        [HttpPut]
-        [Route("Update")]
-
+        [HttpPut("{id}")]
+        [Route("Update/{id}")]
         public void Put(User item)
         {
             _repository.UpdateUser(item);
